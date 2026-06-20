@@ -1,8 +1,12 @@
-import React from "react";
+import HeroSection from "./Hero-Section";
+import TrendingDestination from "./Trending-Destination";
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <>
+         <HeroSection />
+         <TrendingDestination />
+        </>
     )
 }
 
