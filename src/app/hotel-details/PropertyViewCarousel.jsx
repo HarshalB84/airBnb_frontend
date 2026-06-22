@@ -1,7 +1,11 @@
 
+
+
 const PropertyViewCarousel = () => {
-    return(
-        <div>PropertyViewCarousel</div>
+    return (
+        <div>
+            PropertyViewCarousel
+        </div>
     )
 }
 

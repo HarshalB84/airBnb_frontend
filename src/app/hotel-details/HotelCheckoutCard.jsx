@@ -1,7 +1,9 @@
 
 const HotelCheckoutCard = () => {
-    return(
-        <div>HotelCheckoutCard</div>
+    return (
+        <div>
+            HotelCheckOutCard
+        </div>
     )
 }
 

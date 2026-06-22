@@ -1,13 +1,14 @@
-import HeroSection from "./Hero-Section";
-import TrendingDestination from "./Trending-Destination";
+import React from 'react';
+import HeroSection from './hero-section';
+import TrendingDestination from './trending-destination';
 
 const Home = () => {
-    return (
-        <>
-         <HeroSection />
-         <TrendingDestination />
-        </>
-    )
-}
+  return (
+    <>
+      <HeroSection />
+      <TrendingDestination />
+    </>
+  );
+};
 
 export default Home;

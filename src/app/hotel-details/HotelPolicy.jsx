@@ -1,7 +1,9 @@
 
 const HotelPolicy = () => {
-    return(
-        <div>HotelPolicy</div>
+    return (
+        <div>
+            HotelPolicy
+        </div>
     )
 }
 
