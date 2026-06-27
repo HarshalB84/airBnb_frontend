@@ -3,7 +3,7 @@ import PropertyViewCarousel from "./PropertyViewCarousel";
 import HotelMetaDetails from "./HotelMetaDetails";
 import HotelRoomsPicker from "./HotelRoomsPicker";
 import HotelPolicy from "./HotelPolicy";
-import HotelCheckoutCard from "./HotelCheckOutCard";
+import HotelCheckoutCard from "./HotelCheckoutCard";
 import { HOTEL_DATA, HOTEL_INFO } from "./hotel-details-dummy-data";
 
 const HotelDetails = () => {
@@ -18,10 +18,10 @@ const HotelDetails = () => {
                 <div className="flex-1 space-y-8">
                     <HotelMetaDetails hotel={hotelData.hotel} info={hotelInfo} />
                     <HotelRoomsPicker rooms={hotelData.rooms} />
-                    <HotelPolicy />
+                    <HotelPolicy hotelPolicy={hotelInfo.hotelPolicy} />
                 </div>
-                <aside className="w-[340px] shrink-0 p-4 border border-border shadow-md rounded-xl">
-                     <HotelCheckoutCard />
+                <aside className="w-[340px] shrink-0 p-4 border border-border shadow-md rounded-xl sticky top-6 h-min">
+                     <HotelCheckoutCard rooms={hotelData.rooms} cancellationPolicy={hotelInfo.cancellationPolicy} />
                 </aside>
             </div>
         </div>
