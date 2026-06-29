@@ -3,13 +3,16 @@ import Home from './home'
 import Header from '@/components/layouts/Header.Layout'
 import Footer from '@/components/layouts/Footer.Layout'
 import HotelDetails from './hotel-details'
+import { SignInPage, SignUpPage } from './auth'
 
 const App = () => {
   return (
     <div>
       <Header />
       {/* <Home /> */}
-      <HotelDetails />
+      {/* <HotelDetails /> */}
+      {/* <SignInPage /> */}
+      <SignUpPage />
       <Footer />
     </div>
   )

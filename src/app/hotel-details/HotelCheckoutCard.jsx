@@ -6,7 +6,7 @@ const CancellationPolicy = ({cancellationPolicy}) => {
     return(
         <HoverCard openDelay={100}>
             <HoverCardTrigger>
-                <div className="flex gap-1 text-rose-600 items-center">
+                <div className="flex gap-1 text-rose-600 items-center cursor-pointer">
                     <span>Cancellation Policy</span>
                     <Icon icon="info" size="16"/>
                 </div>
