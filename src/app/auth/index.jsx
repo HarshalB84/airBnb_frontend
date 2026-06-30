@@ -5,7 +5,7 @@ import AuthLayout from "@/components/layouts/Auth.Layout";
 
 export const SignInPage = () => {
     return (
-        <AuthLayout>
+        <AuthLayout title="Welcome Back" description="Please enter your details to Sign In">
             <SignIn />
         </AuthLayout>
     )
@@ -13,7 +13,7 @@ export const SignInPage = () => {
 
 export const SignUpPage = () => {
     return (
-        <AuthLayout>
+        <AuthLayout title="Create Account" description="Please fill the form to Sign Up">
             <SignUp />
         </AuthLayout>
     )

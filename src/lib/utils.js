@@ -5,6 +5,11 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
+// export function getAssetPath(path) {
+//   return new URL(`/src/assets/${path}`, import.meta.url).href;
+// }
+
+
 export function getAssetPath(path) {
-  return new URL(`/src/assets/${path}`, import.meta.url).href;
+  return `/assets/${path}`;
 }
