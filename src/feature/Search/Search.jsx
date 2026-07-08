@@ -1,7 +1,9 @@
-import { Form, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { Form } from "@/components/ui/form";
 import LocationInput from "./LocationInput";
 import DateSelectInput from "./DateSelectInput";
 import { Button } from "@/components/ui/Button";
+import OccupancyInput from "./OccupancyInput";
 
 const Search = () => {
 
@@ -18,7 +20,7 @@ const Search = () => {
                 lg:flex-row lg:items-center rounded h-14">
                     <LocationInput form={form}/>
                     <DateSelectInput form={form}/>
-                    <LocationInput form={form}/>
+                    <OccupancyInput form={form}/>
                     <Button type="submit" className="text-lg h-full">Search</Button>
                 </form>
             </Form>
