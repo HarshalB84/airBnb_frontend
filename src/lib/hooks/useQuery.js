@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import axiosInstance from "../axios-instance";
 
 function useQuery({url, options= {}}) {
@@ -17,10 +17,27 @@ function useQuery({url, options= {}}) {
 
         try{
             const response = await axiosInstance.get(url, options);
+            setQueryState({
+                data: response.data, isLoading: false, error: null
+            });
         }catch(e){
-
+             setQueryState(prev => ({
+                ...prev,
+                error: e.message
+            }))
+        }finally{
+            setQueryState(prev => ({
+                ...prev,
+                isLoading: false
+            }))
         }
 
     }
+
+    useEffect(() => {
+        fetchData();
+    }, [url]);
+
+    return {...queryState};
 
 }
