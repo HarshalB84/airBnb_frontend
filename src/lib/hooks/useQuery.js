@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../axios-instance";
 
-function useQuery({url, options= {}}) {
+export default function useQuery({url, options= {}}) {
 
     const [queryState, setQueryState] = useState({
         data: null,
