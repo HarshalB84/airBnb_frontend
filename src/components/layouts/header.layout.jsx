@@ -2,28 +2,28 @@ import { Button } from "../ui/Button";
 import { SERVICE_LIST } from "@/config/app.config";
 import Icon from "../ui/Icon";
 import { Link } from "react-router-dom";
+import { PATHS } from "@/config/path.config";
 
 const Header = () => {
-    return(
+    return (
         <header className="bg-brand py-2">
             <div className="container flex justify-between items-center">
                 <div id="logo-wrapper">
-                <Link to="/" aria-label="Go to Booking.com">
-                    <img width={144} height={24} src="/assets/booking.com.svg" alt="Logo for Booking.com" />
-                </Link>
+                    <Link to="/" aria-label="Go to Booking.com">
+                        <img width={144} height={24} src="/assets/booking.com.svg" alt="Logo for Booking.com" />
+                    </Link>
                 </div>
                 <div id="auth" className="flex gap-2 justify-center items-center">
-                    <Button className="bg-white cursor-pointer border-primary text-primary rounded-sm hover:bg-white/95">
-                        <Link to="/signup">
+                    <Button className="bg-white cursor-pointer border-primary text-primary rounded-sm hover:bg-white/95" asChild>
+                        <Link to={PATHS.SIGN_UP}>
                             Register
-                        </Link> 
+                        </Link>
                     </Button>
-                    <Button className="bg-white cursor-pointer border-primary text-primary rounded-sm hover:bg-white/95">
-                        <Link to="/signin">
+                    <Button className="bg-white cursor-pointer border-primary text-primary rounded-sm hover:bg-white/95" asChild>
+                        <Link to={PATHS.SIGN_IN}>
                             Login
-                        </Link>  
+                        </Link>
                     </Button>
-
                 </div>
             </div>
             <div className="container flex gap-1 overflow-x-auto scrollbar">

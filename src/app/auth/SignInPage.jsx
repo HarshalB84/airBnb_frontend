@@ -9,11 +9,12 @@ import {
 } from '@/components/ui/form';
 import Icon from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
+import { PATHS } from '@/config/path.config';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const form = useForm({
     defaultValues: {
       email: '',
@@ -24,11 +25,6 @@ const SignIn = () => {
   const onSubmit = (data) => {
     console.log('Got the data...', data);
   };
-
-  const handleHidePassword = (e) => {
-    e.preventDefault();
-    setShowPassword(prev => !prev);
-  }
 
   return (
     <>
@@ -60,13 +56,10 @@ const SignIn = () => {
                 <FormControl>
                   <div className="flex items-center justify-between">
                     <Input
-                      type={showPassword ? 'text' : 'password'}
+                      type="password"
                       {...field}
                       className="h-10 rounded flex-1"
                     />
-                    <Button type="button" onClick={(e) => handleHidePassword(e)}>
-                      <Icon icon="eye" />
-                    </Button>
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -85,10 +78,10 @@ const SignIn = () => {
       </Form>
       <div className="flex items-center justify-center mt-6">
         <span className="text-sm ">
-          Don't have an account? {/* TODO: replace with Link */}
-          <a href="" className="text-primary hover:underline">
+          Don't have an account?
+          <Link to={PATHS.SIGN_UP} className="text-primary hover:underline">
             Create Account
-          </a>
+          </Link>
         </span>
       </div>
     </>

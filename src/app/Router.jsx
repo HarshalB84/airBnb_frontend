@@ -5,6 +5,7 @@ import Footer from "@/components/layouts/Footer.Layout";
 import HotelDetails from "./hotel-details";
 import { SignInPage, SignUpPage } from "./auth";
 import SearchPage from "./search/SearchPage";
+import { PATHS } from "@/config/path.config";
 
 const Router = () => {
     return (
@@ -12,10 +13,10 @@ const Router = () => {
             <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/hotel/:id" element={<HotelDetails />} />
-                    <Route path="/signin" element={<SignInPage />} />
-                    <Route path="/signup" element={<SignUpPage />} />
+                    <Route path={PATHS.SEARCH} element={<SearchPage />} />
+                    <Route path={PATHS.HOTEL} element={<HotelDetails />} />
+                    <Route path={PATHS.SIGN_IN} element={<SignInPage />} />
+                    <Route path={PATHS.SIGN_UP} element={<SignUpPage />} />
 
                 </Routes>
             <Footer />
