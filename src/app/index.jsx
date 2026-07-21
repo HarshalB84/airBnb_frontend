@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Router />
-      <Toaster richColors/>
+      <Toaster position="bottom-center" richColors/>
     </>
   )
 }

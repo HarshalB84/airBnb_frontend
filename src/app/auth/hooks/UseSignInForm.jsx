@@ -2,33 +2,34 @@ import { Toaster } from "@/components/ui/sonner";
 import API_CONFIG from "@/config/api.config";
 import { PATHS } from "@/config/path.config";
 import useMutation from "@/lib/hooks/useMutation";
+import { signInSchema } from "@/lib/validators/AuthFormValidator";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { zodResolver } from '@hookform/resolvers/zod';
 
-const useSignUpForm = () => {
+const useSignInForm = () => {
 
     const navigate = useNavigate();
 
-    const { pending, mutate} = useMutation(API_CONFIG.AUTH.SIGN_UP, 'POST');
+    const { pending, mutate} = useMutation(API_CONFIG.AUTH.SIGN_IN, 'POST');
 
     const form = useForm({
     defaultValues: {
-      name: '',
       email: '',
       password: ''
-    }
+    },
+    resolver: zodResolver(signInSchema)
   });
 
-  function handleSignUpSubmit(data){
+  function handleSignInSubmit(data){
     mutate(data, {
         onSuccess: (response) => {
             console.log(response);
-            toast("Sign up successfull", {
-              description: "Use your credentials to Sign in",
+            toast("Logged in successfull", {
               type: "success"
             })
-            navigate(PATHS.SIGN_IN);
+            navigate(PATHS.LANDING);
         },
         onError: (err) => {
             console.log(err);
@@ -42,8 +43,8 @@ const useSignUpForm = () => {
 
 
 
-  return {form, handleSignUpSubmit, pending};
+  return {form, handleSignInSubmit, pending};
 
 }
 
-export {useSignUpForm};
+export {useSignInForm};

@@ -14,7 +14,7 @@ import { useSignUpForm } from './hooks/UseSignUpForm';
 
 const SignUp = () => {
 
-  const {form, handleSignUpSubmit} = useSignUpForm();
+  const {form, handleSignUpSubmit, pending} = useSignUpForm();
 
 
     return (
@@ -66,7 +66,7 @@ const SignUp = () => {
             )}
           />
 
-          <Button type="submit" className="w-full h-10" aria-label="Create a new Account">
+          <Button type="submit" className="w-full h-10" aria-label="Create a new Account" disabled={pending}>
             Create New Account
           </Button>
         </form>

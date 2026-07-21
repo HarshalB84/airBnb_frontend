@@ -13,24 +13,17 @@ import { PATHS } from '@/config/path.config';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useSignInForm } from './hooks/UseSignInForm';
 
 const SignIn = () => {
-  const form = useForm({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
-
-  const onSubmit = (data) => {
-    console.log('Got the data...', data);
-  };
+  
+  const {form, handleSignInSubmit, pending} = useSignInForm();
 
   return (
     <>
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={form.handleSubmit(handleSignInSubmit)}
           className="w-full mt-8 space-y-5"
         >
           <FormField
@@ -71,6 +64,7 @@ const SignIn = () => {
             type="submit"
             className="w-full h-10"
             aria-label="Login to your Account"
+            disabled={pending}
           >
             Log in
           </Button>
